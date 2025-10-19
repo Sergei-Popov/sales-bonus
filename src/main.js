@@ -53,12 +53,8 @@ function analyzeSalesData(data, options) {
 	}
 
     // Проверка наличия опций
-	if (typeof options !== 'object' || options === null) {
+	if (!options || typeof options !== 'object') {
 		throw new Error('Чего-то не хватает');
-	}
-
-	if (options.calculateRevenue || options.calculateBonus) {
-		throw new Error('Некорректные опции');
 	}
 
     // Подготовка промежуточных данных для сбора статистики
