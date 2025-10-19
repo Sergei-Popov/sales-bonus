@@ -53,7 +53,10 @@ function analyzeSalesData(data, options) {
 	}
 
     // Проверка наличия опций
-	if (!options || typeof options !== 'object') {
+	if (!options
+		|| typeof options !== 'object'
+		|| typeof options.calculateRevenue !== 'function'
+		|| typeof options.calculateBonus !== 'function') {
 		throw new Error('Чего-то не хватает');
 	}
 
