@@ -57,6 +57,10 @@ function analyzeSalesData(data, options) {
 		throw new Error('Чего-то не хватает');
 	}
 
+	if (options.calculateRevenue || options.calculateBonus) {
+		throw new Error('Некорректные опции');
+	}
+
     // Подготовка промежуточных данных для сбора статистики
 	const sellerStats = data.sellers.map(seller => ({
 		id: seller.id,
